@@ -8,6 +8,14 @@
     <link href="/dist/output.css" rel="stylesheet">
     <!-- animasi aos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- dark mode -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 
 <body class="overflow-x-hidden scroll-smooth">
@@ -19,14 +27,16 @@
                     <a href="#home" class="block py-6 text-lg font-bold text-primary">anggagumilang</a>
                 </div>
                 <div class="flex items-center px-4">
-                    <button id="hamburger" name="hamburger" type="button" class="absolute block right-4 lg:hidden">
-                        <span class="transition duration-500 ease-in-out origin-top-left hamburger-line"></span>
-                        <span class="transition duration-500 ease-in-out hamburger-line"></span>
-                        <span class="transition duration-500 ease-in-out origin-bottom-left hamburger-line"></span>
+                    <button id="hamburger" name="hamburger" type="button" class="absolute block right-4 lg:hidden ">
+                        <span
+                            class="transition duration-500 ease-in-out origin-top-left hamburger-line dark:bg-white"></span>
+                        <span class="transition duration-500 ease-in-out hamburger-line dark:bg-white"></span>
+                        <span
+                            class="transition duration-500 ease-in-out origin-bottom-left hamburger-line dark:bg-white"></span>
                     </button>
 
                     <nav id="nav-menu"
-                        class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:rounded-none lg:shadow-none">
+                        class="hidden absolute py-5 bg-white dark:shadow-slate-500 dark:bg-slate-800  shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:rounded-none lg:shadow-none">
                         <ul class="block lg:flex">
                             <li class="group">
                                 <a href="#beranda"
@@ -49,7 +59,7 @@
                                     class="flex py-2 mx-8 text-base text-black dark:text-white group-hover:text-primary">Contact</a>
                             </li>
                             <li class="flex items-center pl-1">
-                                <div class="flex">
+                                <div class="flex pl-[25px]">
 
                                     <input type="checkbox" class="hidden" id="dark-toggle">
                                     <label for="dark-toggle">
